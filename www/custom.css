@@ -1,0 +1,82 @@
+.skin-blue .main-header .navbar {
+	background-color:#690f3c !important;
+}
+
+.skin-blue .main-header .navbar-custom-menu :hover {
+background-color:#690f3c !important;
+}
+
+.skin-blue .main-header .navbar:hover {
+background-color:#690f3c !important;
+}
+
+.skin-blue .main-header .logo {
+	background-color:#690f3c !important;
+}
+
+.skin-blue .main-sidebar {
+  background-color:#f6f6f6 !important;
+  color: #665B5B !important;
+}
+
+.skin-blue .sidebar-menu{
+  background-color:#f6f6f6 !important;
+  color: #665B5B !important;
+  width : 260px;
+}
+
+.skin-blue .sidebar-menu>li.active>a, .skin-blue .sidebar-menu>li>a:hover {
+    border-left-color:#690f3c !important;
+    background-color:#f6f6f6 !important;
+    color: #665B5B;
+}
+
+.skin-blue .main-header .navbar .sidebar-toggle:hover {
+  background-color:#690f3c !important;
+}
+
+.skin-blue .box-body{
+	
+  margin-left: 1% !important;
+  margin-right: 1% !important;
+	
+}
+
+.skin-blue .box{
+	border-color:#b2aEa8 !important;
+  width: 100% !important;
+-moz-box-shadow: 0px 0px 0px 0px #656565;
+-webkit-box-shadow: 0px 0px 0px 0px #656565;
+-o-box-shadow: 0px 0px 0px 0px #656565;
+box-shadow: 0px 0px 0px 0px #656565;
+filter:progid:DXImageTransform.Microsoft.Shadow(color=#656565, Direction=NaN, Strength=0);
+}
+
+.skin-blue .control-label{
+font-weight: 100;
+  color: #665B5B;
+}
+
+.content-wrapper{
+  background-color: #ffffff;
+  color: #665B5B;
+}
+
+.skin-blue .input-group-addon {
+  background-color: #f6f6f6;
+  border-color:#f6f6f6;
+}
+
+img {
+  display:block;
+  margin:auto;
+
+}
+
+.shiny-image-output {
+  height : 250px !important;
+}
+
+div#myImage {
+  height:160px !important;
+}
