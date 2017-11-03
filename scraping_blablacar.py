@@ -12,12 +12,8 @@ from datetime import date
 import sys
 sys.path.append("c:/users/psaffers/appdata/local/programs/python/python35/lib/site-packages")
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 import time
 import googlemaps
-import json
 
 #Définition des constantes de date
 today = date.today()
