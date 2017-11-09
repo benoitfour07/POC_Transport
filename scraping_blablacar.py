@@ -4,13 +4,13 @@ Created on Mon Oct 23 12:54:59 2017
 
 @author: psaffers
 """
+import sys
+sys.path.append("c:/users/psaffers/appdata/local/programs/python/python35/lib/site-packages")
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import datetime
 from datetime import date
-import sys
-sys.path.append("c:/users/psaffers/appdata/local/programs/python/python35/lib/site-packages")
 from selenium import webdriver
 import time
 import googlemaps
@@ -20,7 +20,11 @@ today = date.today()
 tomor = date.today()+datetime.timedelta(1)
 j_j   = str(today.year)+"-"+'0'*(1-len(str(today.month)))+str(today.month)+"-"+'0'*(2-len(str(today.day)))+str(today.day)
 j_p_1 = str(tomor.year)+"-"+'0'*(1-len(str(tomor.month)))+str(tomor.month)+"-"+'0'*(2-len(str(tomor.day)))+str(tomor.day)
-
+j_j_txt   = j_j.replace("-","")
+j_p_1_txt = j_p_1.replace("-","")
+#Définition des répertoires
+output_rep = 'C:/Users/psaffers/Documents/POC/Parking/Data/Covoiturage'
+chemin_exe = 'C:/Program Files (x86)/Google/Chrome/chromedriver'
 #On récupère la structure de la page
 page = requests.get("https://www.blablacar.fr", headers={'User-Agent': 'Mozilla/5.0'})
 page.status_code
@@ -66,7 +70,7 @@ trajets_table = pd.DataFrame({'url':http,'start':dep,'end':arr})
 trajets_table = trajets_table[(trajets_table['end']=='Paris')|(trajets_table['start']=='Paris')].reset_index()[['start','end','url']]
 
 #On définit le webdriver
-driver = webdriver.Chrome('C:/Program Files (x86)/Google/Chrome/chromedriver')
+driver = webdriver.Chrome(chemin_exe)
 #On définit notre future table d'étude
 covoit = pd.DataFrame(columns=['date','type','place'])
 #On itère sur les différentes URL trouvées
@@ -150,4 +154,4 @@ for l in range(0,len(covoit_v1['place'])):
     except:
         next
 
-print(covoit_v1)
+covoit_v1.to_csv(output_rep+'/covoit_'+j_j_txt+'.csv')
