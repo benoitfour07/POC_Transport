@@ -35,8 +35,6 @@ body <- dashboardBody(
     
     tabItem(tabName = "carte",
       leafletOutput("map_france", height = "600px")
-        
-
     ),
     
     # ------------------------------------------------------------
