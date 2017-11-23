@@ -25,8 +25,11 @@ j_p_1_txt = j_p_1.replace("-","")
 #Définition des répertoires
 output_rep = 'C:/Users/psaffers/Documents/POC/Parking/Data/Covoiturage'
 chemin_exe = 'C:/Program Files (x86)/Google/Chrome/chromedriver'
+#On ouvre une session requests
+session = requests.Session()
+
 #On récupère la structure de la page
-page = requests.get("https://www.blablacar.fr", headers={'User-Agent': 'Mozilla/5.0'})
+page = session.get("https://www.blablacar.fr", headers={'User-Agent': 'Mozilla/5.0'})
 page.status_code
 print(page.content)
 
@@ -70,6 +73,9 @@ trajets_table = pd.DataFrame({'url':http,'start':dep,'end':arr})
 trajets_table = trajets_table[(trajets_table['end']=='Paris')|(trajets_table['start']=='Paris')].reset_index()[['start','end','url']]
 
 #On définit le webdriver
+options = webdriver.ChromeOptions()
+#options.add_argument('headless')
+#options.add_argument('--log-level=3')
 driver = webdriver.Chrome(chemin_exe)
 #On définit notre future table d'étude
 covoit = pd.DataFrame(columns=['date','type','place'])
